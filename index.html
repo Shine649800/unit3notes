@@ -9,11 +9,24 @@
     <input type="text" id="text1"/>
     <button id="button1">BUTTON</button>
 </div>
+<div id="hyper">
+    <a href="practice.html"><button id="button2">Go to second page.</button></a>
+</div>
+
+
 <script>
     console.log('Hello console! - line 13');
 
     const inputElement = document.getElementById('text1');
     const buttonElement = document.getElementById('button1');
+    const buttonElement2 = document.getElementById('button2');
+
+    buttonElement2.addEventListener('mouseover', function(e) {
+        console.log('Your mouse is on a hyperlink.');
+    });
+    buttonElement2.addEventListener('mouseout', function(e) {
+        console.log('Your mouse is no longer on the hyperlink.');
+    });
 
     inputElement.addEventListener('change', function(e){
         console.log(`The value you entered is ${e.target.value}`);
