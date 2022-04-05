@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Updated Color Picker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <div class="content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ultricies tristique nulla aliquet enim tortor. Fusce ut placerat orci nulla pellentesque dignissim enim. Nec feugiat in fermentum posuere urna nec tincidunt praesent. Aliquam ultrices sagittis orci a scelerisque purus semper eget. Porta lorem mollis aliquam ut porttitor leo a diam. Morbi tincidunt ornare massa eget egestas purus viverra accumsan in. Ut enim blandit volutpat maecenas. Pellentesque pulvinar pellentesque habitant morbi tristique senectus et netus. Sed cras ornare arcu dui vivamus. Nunc mi ipsum faucibus vitae. Nisl nunc mi ipsum faucibus vitae aliquet. Turpis egestas integer eget aliquet nibh praesent tristique magna sit. Justo laoreet sit amet cursus sit amet dictum sit amet.</p>
+        <div class="row">
+            <h3>Background</h3>
+            <input type="color" id="bg" value="#FFFFFF">
+        </div>
+        <div class="row">
+            <h3>Text!</h3>
+            <input type="color" id="txt">
+        </div>
+        <button id="clear">CLEAR</button>
+    </div>
+</div>
+<script>
+    const content = document.querySelector('.content');
+    const bg = document.getElementById('bg');
+    const txt = document.getElementById('txt');
+    const clear = document.getElementById('clear');
+
+    bg.addEventListener('change', function(e){
+        content.style.backgroundColor = e.target.value;
+    });
+
+    txt.addEventListener('change', function(e){
+        content.style.color = e.target.value;
+    });
+
+    clear.addEventListener('click', function(e){
+        content.style.backgroundColor = 'white';
+        bg.value = '#FFFFFF'
+        content.style.color = 'black';
+        txt.value = '#000000'
+    })
+
+</script>
+</body>
+</html>
