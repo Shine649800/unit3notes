@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <div class="content">
+        <h3>What is this?</h3>
+        <h4>I dont want this</h4>
+    </div>
+</div>
+<script>
+    const content = document.querySelector('.content');
+    //Replace contents of an html tag using innerHTML
+    content.innerHTML = '<h1 id="lose">I love Pokemon</h1><h4>Why does the best days in life last so short?</h4>';
+
+    //add a new element in addition to existing elements
+    const pokemon = document.createElement('h1');
+    pokemon.innerHTML = 'I love Pokemon';
+    content.appendChild(pokemon);
+    const poke = document.createElement('h1')
+    poke.innerHTML = 'Raichu is best pokemon';
+    content.appendChild(poke);
+    const games = document.createElement('h1');
+    games.innerHTML = 'Minecraft is a very fun game';
+    content.appendChild(games);
+    const minecraft = document.createElement('h1');
+    minecraft.innerHTML = 'I spend a lot of time on minecraft';
+    content.appendChild(minecraft);
+
+    //put this at the top in addition to existing elements
+    const food = document.createElement('h1');
+    food.innerHTML = 'I love Pasta';
+    content.insertAdjacentElement('afterend', food);
+
+    //to remove an element
+    const unwantedElement = document.querySelector('h4');
+    unwantedElement.remove();
+    const unwantedElement2 = document.querySelector('#lose');
+    unwantedElement2.remove();
+</script>
+</body>
+</html>
