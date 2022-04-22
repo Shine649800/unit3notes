@@ -24,12 +24,12 @@
         //
         //
         let newElement = document.createElement('li');
-        newElement.innerHTML =
+        newElement.innerHTML = item.value;
         newElement.addEventListener('click', function(e){
-            //
+            newElement.remove();
         });
         myList.appendChild(newElement)
-        //
+        item.value = "";
     }
     button.addEventListener('click', addItem);
 </script>
