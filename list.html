@@ -6,26 +6,32 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="container">
-    <div class="content">
-        <div>
-            <label for="item">Insert Item</label>
-            <input type="text" id="item" name="item" style="width: 150px;">
-        </div>
 
-        <button id="button">Add item</button>
-    </div>
+<div>
+    <label for="item">Enter an Item</label>
+    <input type="text" id="item" name="itemList" style="width: 150px;">
+</div>
+<button id="button">Add</button>
+<div>
+    <ul>
+    </ul>
 </div>
 <script>
-const list = document.querySelector('content');
+    const myList = document.querySelector('ul');
+    const item = document.getElementById('item');
 
-function addItem(){
-    let newElement = document.createElement('item');
-    newElement.addEventListener('click', function(e){
-    });
-    list.appendChild(newElement)
-}
-button.addEventListener('click', addItem);
+    function addItem(){
+        //
+        //
+        let newElement = document.createElement('li');
+        newElement.innerHTML =
+        newElement.addEventListener('click', function(e){
+            //
+        });
+        myList.appendChild(newElement)
+        //
+    }
+    button.addEventListener('click', addItem);
 </script>
 </body>
 </html>

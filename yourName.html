@@ -23,32 +23,28 @@
         </div>
         <button id="button">Say hello!</button>
         <div id="text">
+
+        </div>
     </div>
 </div>
 <script>
     const firstName = document.getElementById('first');
     const lastName = document.getElementById('last');
-    const full = document.querySelector('p');
     const button = document.querySelector('button');
     const text = document.getElementById('text');
 
 
-    button.addEventListener('click', function(){
+    button.addEventListener('click', function(e){
         const name = document.createElement('h1');
-        name.innerHTML = 'I love Pasta';
-        text.insertAdjacentElement('afterbegin', name;
+        name.innerHTML = nameCreator();
+        text.insertAdjacentElement('afterbegin', name);
     });
 
     function nameCreator(){
         let first = firstName.value;
         let last = lastName.value;
         let fullName = `Hello ${first} ${last}!`;
-        if (fullName.length>1){
-            full.classList.remove("hidden")
-        } else{
-            full.classList.add("hidden")
-        }
-        full.textContent = fullName;
+        return fullName;
     }
 </script>
 </body>
