@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Timers Practice</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <div class="content">
+        <button id="click">Click me!</button>
+    </div>
+</div>
+
+<script>
+    const click = document.getElementById("click");
+
+    click.addEventListener('click', function(){
+        setTimeout(function(){
+            console.log("I was clicked 3 second ago.")
+        }, 3000);
+        // click.remove();
+    })
+</script>
+</body>
+</html>
