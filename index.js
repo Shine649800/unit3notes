@@ -6,11 +6,11 @@ buildBoard();
 let clicks = 0;
 
 let interval = setInterval(function(){
-    addCard(cardList.children.length + 1) //makes it start at 1 not 0
+    addCard("good card") //makes it start at 1 not 0
 }, 2000);
 
 let badInterval = setInterval( function(){
-    addBadCard(cardList.children.length + 1)
+    addBadCard("bad card")
 }, 10000);
 
 cardList.addEventListener('click', function(e){
