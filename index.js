@@ -1,6 +1,9 @@
 const cardList = document.querySelector( '.cardList');
+const score = document.querySelector('.score');
 
 buildBoard();
+
+let clicks = 0;
 
 let interval = setInterval(function(){
     addCard(cardList.children.length + 1) //makes it start at 1 not 0
@@ -14,9 +17,14 @@ cardList.addEventListener('click', function(e){
     if (e.target.classList.contains('active')){
         e.target.classList.remove('active');
         e.target.classList.add('inactive');
+        clicks++;
+        score.textContent = clicks;
         return
     }
     e.target.remove();
+    clicks++;
+    clicks++;
+    score.textContent = clicks;
     let children = cardList.children;
     if (children.length < 1){
         clearInterval(interval);
