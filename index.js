@@ -11,7 +11,7 @@ let interval = setInterval(function(){
 
 let badInterval = setInterval( function(){
     addBadCard("bad card")
-}, 10000);
+}, 5000);
 
 cardList.addEventListener('click', function(e){
     console.log(e.target);
@@ -22,6 +22,19 @@ cardList.addEventListener('click', function(e){
         e.target.classList.remove('active');
         e.target.classList.add('inactive');
         clicks++;
+        score.textContent = clicks;
+        return
+    } else if (e.target.classList.contains('badActive')){
+        e.target.classList.remove('badActive');
+        e.target.classList.add('badInActive');
+        clicks--;
+        score.textContent = clicks;
+        return
+    }
+    else if(e.target.classList.contains('badInActive')){
+        clicks--;
+        clicks--;
+        e.target.remove();
         score.textContent = clicks;
         return
     }
@@ -47,13 +60,13 @@ function addCard(value){
 function addBadCard(value){
     let badCard = document.createElement('div');
     badCard.classList.add('badCard');
-    badCard.classList.add('active');
+    badCard.classList.add('badActive');
     badCard.innerHTML = value;
     cardList.appendChild(badCard);
 }
 
 function buildBoard(){
     for (let i=0; i<12; i++){
-        addCard( 'starter');
+        addCard( 'good card');
     }
 }
