@@ -11,7 +11,7 @@ let interval = setInterval(function(){
 
 let badInterval = setInterval( function(){
     addBadCard("bad card")
-}, 5000);
+}, 4000);
 
 cardList.addEventListener('click', function(e){
     console.log(e.target);
@@ -34,8 +34,15 @@ cardList.addEventListener('click', function(e){
     else if(e.target.classList.contains('badInActive')){
         clicks--;
         clicks--;
+        clicks--;
+        clicks--;
         e.target.remove();
         score.textContent = clicks;
+        return
+    } else if (e.target.classList.contains('goldActive')){
+        console.log('You win!');
+        console.log(`You had ${clicks} points!`);
+        e.target.remove();
         return
     }
     e.target.remove();
@@ -46,6 +53,10 @@ cardList.addEventListener('click', function(e){
     if (children.length < 1){
         clearInterval(interval);
         clearInterval(badInterval);
+    } else if (clicks >= 40){
+        clearInterval(interval);
+        clearInterval(badInterval);
+        addGoldCard( 'The Golden Card!');
     }
 });
 
@@ -64,6 +75,15 @@ function addBadCard(value){
     badCard.innerHTML = value;
     cardList.appendChild(badCard);
 }
+
+function addGoldCard(value){
+    let goldCard = document.createElement('div');
+    goldCard.classList.add('goldCard');
+    goldCard.classList.add('goldActive');
+    goldCard.innerHTML = value;
+    cardList.appendChild(goldCard);
+}
+
 
 function buildBoard(){
     for (let i=0; i<12; i++){
