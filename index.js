@@ -11,7 +11,7 @@ let interval = setInterval(function(){
 
 let badInterval = setInterval( function(){
     addBadCard("bad card")
-}, 4000);
+}, 2000);
 
 cardList.addEventListener('click', function(e){
     console.log(e.target);
@@ -53,7 +53,7 @@ cardList.addEventListener('click', function(e){
     if (children.length < 1){
         clearInterval(interval);
         clearInterval(badInterval);
-    } else if (clicks >= 40){
+    } else if (clicks >= 100){
         clearInterval(interval);
         clearInterval(badInterval);
         addGoldCard( 'The Golden Card!');
